@@ -1,4 +1,5 @@
 //START_OF_CODE
+//TODO: 1. Fix saving. 2. Fix word count. 3. Make TODO.md
 //This handles the word count.
 const editor = document.getElementById('editor');
 const wordCountDisplay = document.getElementById('word-count');
