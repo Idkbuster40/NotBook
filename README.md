@@ -8,3 +8,5 @@ left, right, center and justified and more using symbols like `<-\`,`->\`, `^\` 
 Data saving is handled in the web browser, more features will be added over time.
 
 Just like the name, it is not a book and should not be confused for one. 
+
+Check the branches with the appropriate version number like: `1.00` or `0.10` or `release` for the stable version(s). For experimental platforms like the older phones/kindle see `experimental` or `legacy-support`
