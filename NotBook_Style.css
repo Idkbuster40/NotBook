@@ -1,0 +1,58 @@
+body {
+    margin: inherit;
+    padding: inherit;
+    font-family: Arial, sans-serif;
+    /*background-color: #09090a;*/
+    background-image: url(https://images.unsplash.com/photo-1418985991508-e47386d96a71?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-repeat: space;
+    background-size: cover;
+    z-index: -1;
+}
+.page {
+ /*does this even do anything*/
+    opacity: 100%;
+
+}
+.editor {
+    width: 80vh;
+    height: 90vh;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    background-color: rgba(30, 31, 33, 0.75);
+    color: #ebebeb;
+    font-family: "Crimson Pro", serif;
+    font-optical-sizing: auto;
+    font-weight: 550;
+    font-style: normal;
+    word-wrap: break-word;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2;
+    blur: 5px;
+
+}
+#status {
+    font-family: "Tomorrow", sans-serif;
+    font-size: 10px;
+    padding: 10px;
+    background-color: #17181a;
+    color:#c9c9c9;
+    height: auto;
+}
+
+.tomorrow-medium {
+  font-family: "Tomorrow", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 200 to 900
+
+.crimson-pro-uniquifier {
+  font-family: "Crimson Pro", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
