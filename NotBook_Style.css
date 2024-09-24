@@ -1,0 +1,60 @@
+/* Credits for nice CSS go to:
+Hyperplexed(sort of, a little bit. But still here's the source: https://codepen.io/Hyperplexed/pen/VwXEXbW [Theme Picker/1 line of JS]),
+and https://neumorphism.io by Uiverse.
+And ChatGPT in helping for some small debugging. */
+
+
+body {
+  margin: inherit;
+      padding: inherit;
+      font-family: "Tomorrow", sans-serif;
+      font-size: 16px;
+      /*background-color: #09090a;*/
+      background-image: url(https://images.unsplash.com/photo-1532153354457-5fbe1a3bb0b4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+      /*Credit for the image: https://unsplash.com/photos/white-ruled-paper-U_Ff4ohzLSw*/
+      background-repeat: space;
+      background-size: cover;
+      z-index: -1;
+    }
+
+
+input,
+label {
+  color: white;
+  font-family: monospace;
+  font-size: 1em;
+}
+
+
+textarea{
+  resize: none;
+  font-family: monospace;
+  font-size: 16px;
+  position: absolute;
+  display:block;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* ChatGPT is good for small stuff like this. */
+  width: 75vh;
+  height: 85vh;
+}
+
+.textbox{
+  background-color: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(3px);
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: white;
+  outline: none;
+  padding: 10px;
+}
+
+.textbox::placeholder {
+  color: #c4c4c4;
+}
+
+.textbox:focus {
+  border-color: #fb8c00;
+  box-shadow:  20px 20px 60px #242424, -20px -20px 60px #303030;
+  transition:box-shadow 0.3s;
+}
