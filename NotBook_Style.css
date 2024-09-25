@@ -3,7 +3,11 @@ Hyperplexed(sort of, a little bit. But still here's the source: https://codepen.
 and https://neumorphism.io by Uiverse.
 And ChatGPT in helping for some small debugging. */
 
-
+/* New bugs/features to add:
+    1. fix ugly scroll bar.
+    2. fix bug with text overflowing into the text box, making a 2nd x-axis scroll bar appear.
+    3. word counter in tooltip which is counting the words from textarea which will probably be in a div.
+    4. Markdown with the cursed method, with keys. Along with alignment(I'll use the spc or tab charecter for that. Though it makes it so that that will require additional code and CSS for the thing to work correctly.). */
 body {
   margin: inherit;
   padding: inherit;
@@ -17,7 +21,8 @@ body {
   background-size: cover;
   background-attachment: fixed;
   z-index: -1;
-    }
+
+  }
 
 
 input,
@@ -43,6 +48,7 @@ textarea{
   backdrop-filter: blur(0px);
   /*filter:drop-shadow(04px 03px 3px #00000087);*/
   background-color: rgba(0, 0, 0, 0);
+  overflow-y: scroll;
 }
 
 .textbox{
@@ -70,4 +76,50 @@ textarea:focus {
 
 .info-icon {
 
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------- */
+/*                                              Below is custom scroll bar code(Chromium-based and Firefox-based)                                       */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Scrollbar for Chromim-based */
+::-webkit-scrollbar {
+    width: 2.1px;
+    height: 2px;
+    color:white;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0); /* color of the scrollbar track */
+    border-radius: 10px; /* rounded corners for track */
+    width: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #959595; /* color of the scrollbar handle */
+    border-radius: 10px; /* rounded corners for the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* color when hovering over the handle */
+}
+
+/* Optional: Hide the scrollbar when not in use */
+::-webkit-scrollbar {
+    opacity: 0; /* hide scrollbar */
+}
+
+textarea:hover::-webkit-scrollbar {
+    opacity: 1; /* show scrollbar on hover */
+}
+
+
+/* Scrollbar for FireFox-based is in the textarea css code. It is broken. And does not work.*/
+
+.scrollbar {
+  scrollbar-color: white;
+  scrollbar-with: thin;
 }
