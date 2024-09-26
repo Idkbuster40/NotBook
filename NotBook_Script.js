@@ -15,15 +15,15 @@
 
 // IndexedDB, opens it if exists, creates if not.
 window.addEventListener('load', () => {
-  const textarea = document.querySelector('textarea');
+  const div = document.querySelector('div');
   let db;
 
-  // Open IndexedDB
-  const request = indexedDB.open('myDB', 1);
+  // Open IndexedDB, which is aptly titled "NotBook_IndxDB".
+  const request = indexedDB.open('NotBook_IndxDB', 1);
 
   request.onupgradeneeded = (event) => {
     db = event.target.result;
-    if (!db.objectStoreNames.contains('notes')) {
+    if (!db.objectStoreNames.contains('notes')) {  //save under "notes"
       db.createObjectStore('notes', { keyPath: 'id' });
     }
   };
@@ -31,13 +31,13 @@ window.addEventListener('load', () => {
   request.onsuccess = (event) => {
     db = event.target.result;
 
-    // Load saved data
+    // Load saved data, please.
     const transaction = db.transaction(['notes'], 'readonly');
     const store = transaction.objectStore('notes');
     const getRequest = store.get(1);
     getRequest.onsuccess = () => {
       if (getRequest.result) {
-        textarea.value = getRequest.result.content;
+        div.textContent = getRequest.result.content;
       }
     };
   };
@@ -46,6 +46,9 @@ window.addEventListener('load', () => {
   window.addEventListener('beforeunload', () => {
     const transaction = db.transaction(['notes'], 'readwrite');
     const store = transaction.objectStore('notes');
-    store.put({ id: 1, content: textarea.value });
+    store.put({ id: 1, content: div.textContent });
+    console.log(db.transaction);
   });
 });
+
+console.log("v0.11.3");

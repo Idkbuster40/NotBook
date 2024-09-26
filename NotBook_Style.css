@@ -7,7 +7,8 @@ And ChatGPT in helping for some small debugging. */
     1. fix ugly scroll bar.
     2. fix bug with text overflowing into the text box, making a 2nd x-axis scroll bar appear.
     3. word counter in tooltip which is counting the words from textarea which will probably be in a div.
-    4. Markdown with the cursed method, with keys. Along with alignment(I'll use the spc or tab charecter for that. Though it makes it so that that will require additional code and CSS for the thing to work correctly.). */
+    4. Markdown with the cursed method, with keys. Along with alignment(I'll use the spc or tab charecter for that. Though it makes it so that that will require additional code and CSS for the thing to work correctly.).
+    */
 body {
   margin: inherit;
   padding: inherit;
@@ -33,7 +34,7 @@ label {
 }
 
 
-textarea{
+div{
   resize: none;
   font-family: monospace;
   font-size: 16px;
@@ -62,17 +63,20 @@ textarea{
 
 }
 
-textarea::placeholder {
-  color: #c4c4c4;
+div::placeholder {
   transition:box-shadow 0.3s;
 }
 
-textarea:focus {
+div:focus {
   border-color: #fb8c00;
-  box-shadow:  20px 20px 60px #242424, -20px -20px 60px #303030;
+  box-shadow:  12px 12px 24px #111111, -12px -12px 24px #2b2b2b;
   transition:box-shadow 0.3s;
 }
 
+[contentEditable=true]:empty:not(:focus):before {
+  content: attr(data-text);
+  color: #c4c4c4;
+}
 
 .info-icon {
 
